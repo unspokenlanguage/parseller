@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Show polygon information on click</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+.mapboxgl-popup {
+max-width: 400px;
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+</style>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoia3V0bGF5ZGVkZSIsImEiOiJ3TjV0VnEwIn0.eW2S0eEbcK46DuQH6E0w7A';
+    // Create a new map.
+    const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/kutlaydede/cl2wapoh5002o14mr240znbpo',
+
+    //41.248,31.983
+    center: [34.62883, 37.97348],
+    zoom: 3
+    });
+ 
+map.on('load', () => {
+// Add a source for the state polygons.
+map.addSource('states', {
+'type': 'geojson',
+'data': {
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Nitelik": "Arsa",
+        "Pafta": "M33-A-03-C-1-A",
+        "Il": "Niğde",
+        "Ilce": "Merkez",
+        "Mevkii": "",
+        "Alan": "679.94",
+        "Mahalle": "Fertek",
+        "ParselNo": "3",
+        "Ada": "236",
+        "Hisse" : "8"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              34.62883,
+              37.97348
+            ],
+            [
+              34.62848,
+              37.97318
+            ],
+            [
+              34.62853,
+              37.97314
+            ],
+            [
+              34.62861,
+              37.97309
+            ],
+            [
+              34.62895,
+              37.97339
+            ],
+            [
+              34.62883,
+              37.97348
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "005d57bbbfdd7265f6016195b0b4c32e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nitelik": "Arsa",
+        "Pafta": "M33-A-03-C-1-A",
+        "Il": "Niğde",
+        "Ilce": "Merkez",
+        "Mevkii": "",
+        "Alan": "762.31",
+        "Mahalle": "Fertek",
+        "ParselNo": "14",
+        "Ada": "236",
+        "Hisse" : "18"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              34.62839,
+              37.97324
+            ],
+            [
+              34.62851,
+              37.9734
+            ],
+            [
+              34.62809,
+              37.97353
+            ],
+            [
+              34.62801,
+              37.97337
+            ],
+            [
+              34.62839,
+              37.97324
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "17a5e4afc520c9b45fe57df3ce5bd6bd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nitelik": "Bağ",
+        "Pafta": "M33-A-03-C-1-B, M33-A-03-C-1-C",
+        "Il": "Niğde",
+        "Ilce": "Merkez",
+        "Mevkii": "",
+        "Alan": "1,604.91",
+        "Mahalle": "Aşağikayabaşi",
+        "ParselNo": "7",
+        "Ada": "3937",
+        "Hisse" : "37"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              34.63415,
+              37.96852
+            ],
+            [
+              34.63431,
+              37.9686
+            ],
+            [
+              34.63433,
+              37.96864
+            ],
+            [
+              34.63414,
+              37.9688
+            ],
+            [
+              34.63444,
+              37.9691
+            ],
+            [
+              34.63438,
+              37.96911
+            ],
+            [
+              34.63438,
+              37.96917
+            ],
+            [
+              34.63425,
+              37.96912
+            ],
+            [
+              34.63417,
+              37.96905
+            ],
+            [
+              34.63393,
+              37.96898
+            ],
+            [
+              34.63382,
+              37.96891
+            ],
+            [
+              34.63415,
+              37.96852
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "1af05fe86c27696be9b938f5c6318f86"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nitelik": "Arsa",
+        "Pafta": "7",
+        "Il": "Niğde",
+        "Ilce": "Merkez",
+        "Mevkii": "Köyönü",
+        "Alan": "792.95",
+        "Mahalle": "Koyunlu",
+        "ParselNo": "3",
+        "Ada": "469",
+        "Hisse" : "9"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              34.59559,
+              37.98305
+            ],
+            [
+              34.59534,
+              37.98297
+            ],
+            [
+              34.59548,
+              37.98268
+            ],
+            [
+              34.59572,
+              37.98279
+            ],
+            [
+              34.59559,
+              37.98305
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "2eeda27f465f4943d7367223a7f6b44a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nitelik": "Arsa",
+        "Pafta": "M33-A-03-C-1-A",
+        "Il": "Niğde",
+        "Ilce": "Merkez",
+        "Mevkii": "",
+        "Alan": "676.68",
+        "Mahalle": "Fertek",
+        "ParselNo": "2",
+        "Ada": "236",
+        "Hisse" : "8"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              34.62866,
+              37.97359
+            ],
+            [
+              34.62851,
+              37.9734
+            ],
+            [
+              34.62839,
+              37.97324
+            ],
+            [
+              34.62848,
+              37.97318
+            ],
+            [
+              34.62883,
+              37.97348
+            ],
+            [
+              34.6288,
+              37.97351
+            ],
+            [
+              34.62866,
+              37.97359
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "380696b6532c05a09ee43976742880cd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nitelik": "Bağ",
+        "Pafta": "M33-A-07-C-1-C, M33-A-07-C",
+        "Il": "Niğde",
+        "Ilce": "Bor",
+        "Mevkii": "",
+        "Alan": "255.98",
+        "Mahalle": "Ciğizoğlu Osman Efendi",
+        "ParselNo": "118",
+        "Ada": "398",
+        "Hisse" : "27"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              34.58711,
+              37.9179
+            ],
+            [
+              34.58733,
+              37.91784
+            ],
+            [
+              34.5874,
+              37.91792
+            ],
+            [
+              34.58719,
+              37.91802
+            ],
+            [
+              34.58711,
+              37.9179
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "582aa42ba73f1ca3acded1f421fe2257"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nitelik": "Arsa",
+        "Pafta": "M33-A-03-C-1-A",
+        "Il": "Niğde",
+        "Ilce": "Merkez",
+        "Mevkii": "",
+        "Alan": "839.95",
+        "Mahalle": "Fertek",
+        "ParselNo": "11",
+        "Ada": "236",
+        "Hisse" : "8"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              34.62823,
+              37.97275
+            ],
+            [
+              34.62853,
+              37.97314
+            ],
+            [
+              34.62848,
+              37.97318
+            ],
+            [
+              34.62839,
+              37.97324
+            ],
+            [
+              34.62824,
+              37.97303
+            ],
+            [
+              34.62808,
+              37.97282
+            ],
+            [
+              34.62823,
+              37.97275
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "792c003b0b7e0668809c51b9e3fa6cf6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nitelik": "Otlak",
+        "Pafta": "M33-A-07-C",
+        "Il": "Niğde",
+        "Ilce": "Bor",
+        "Mevkii": "",
+        "Alan": "3,586.83",
+        "Mahalle": "Ciğizoğlu Osman Efendi",
+        "ParselNo": "129",
+        "Ada": "398",
+        "Hisse" : "27"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              34.58796,
+              37.91941
+            ],
+            [
+              34.58804,
+              37.91928
+            ],
+            [
+              34.58813,
+              37.91913
+            ],
+            [
+              34.58844,
+              37.91884
+            ],
+            [
+              34.58849,
+              37.91875
+            ],
+            [
+              34.58861,
+              37.91869
+            ],
+            [
+              34.58892,
+              37.91838
+            ],
+            [
+              34.58912,
+              37.91866
+            ],
+            [
+              34.58882,
+              37.91889
+            ],
+            [
+              34.58859,
+              37.91909
+            ],
+            [
+              34.58854,
+              37.91923
+            ],
+            [
+              34.58834,
+              37.91916
+            ],
+            [
+              34.58821,
+              37.91939
+            ],
+            [
+              34.58816,
+              37.91954
+            ],
+            [
+              34.58804,
+              37.91942
+            ],
+            [
+              34.58796,
+              37.91941
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "ab0fe6ea200ededcdedc83599e8b7d2f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Nitelik": "Arsa",
+        "Pafta": "37",
+        "Il": "Niğde",
+        "Ilce": "Merkez",
+        "Mevkii": "",
+        "Alan": "259.33",
+        "Mahalle": "Koyunlu",
+        "ParselNo": "9",
+        "Ada": "106",
+        "Hisse" : "8"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              34.60241,
+              37.9838
+            ],
+            [
+              34.60229,
+              37.98391
+            ],
+            [
+              34.60215,
+              37.98381
+            ],
+            [
+              34.60227,
+              37.9837
+            ],
+            [
+              34.60241,
+              37.9838
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "d2a2cb6eb96798e218b3278c6e3f23a2"
+    }
+  ],
+  "type": "FeatureCollection"
+}
+});
+
+// Create a default Marker and add it to the map.
+const marker1 = new mapboxgl.Marker()
+.setLngLat([34.62883, 37.97348])
+.addTo(map);
+
+const marker2 = new mapboxgl.Marker()
+.setLngLat([34.62839, 37.97324])
+.addTo(map);
+
+const marker3 = new mapboxgl.Marker()
+.setLngLat([34.63415, 37.96852])
+.addTo(map);
+
+const marker4 = new mapboxgl.Marker()
+.setLngLat([34.59559, 37.98305])
+.addTo(map);
+
+const marker5 = new mapboxgl.Marker()
+.setLngLat([34.62866, 37.97359])
+.addTo(map);
+
+const marker6 = new mapboxgl.Marker()
+.setLngLat([34.58711, 37.9179])
+.addTo(map);
+
+const marker7 = new mapboxgl.Marker()
+.setLngLat([34.62823, 37.97275])
+.addTo(map);
+
+const marker8 = new mapboxgl.Marker()
+.setLngLat([34.58796, 37.91941])
+.addTo(map);
+
+
+const marker9 = new mapboxgl.Marker()
+.setLngLat([34.60241, 37.9838])
+.addTo(map);
+
+
+
+// Add a layer showing the state polygons.
+map.addLayer({
+'id': 'states-layer',
+'type': 'fill',
+'source': 'states',
+'paint': {
+'fill-color': 'rgba(9, 216, 227, 0.8)',
+'fill-outline-color': 'rgba(200, 100, 240, 1)'
+}
+});
+ 
+map.flyTo({
+    center:[34.5954247, 37.945],
+    zoom: 12.5,
+    speed: 1,
+});
+// When a click event occurs on a feature in the states layer,
+// open a popup at the location of the click, with description
+// HTML from the click event's properties.
+map.on('click', 'states-layer', (e) => {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML('Nitelik : <b>' + e.features[0].properties.Nitelik  + '</b>'
++ '<br>Mahalle : <b>' +  e.features[0].properties.Mahalle + '</b>'
++ '<br>Parsel No : <b>' +  e.features[0].properties.ParselNo + '</b>'
++ '<br>Ada : <b>' +  e.features[0].properties.Ada + '</b>'
++ '<br>Alan : <b>' +  e.features[0].properties.Alan + '</b>'
++ '<br>İlgili taşınmaz üzerinde hisse sahibi <b>' +  e.features[0].properties.Hisse + '</b> kişi bulunmaktadır.' )
+
+// "Mahalle": "Dedeoğlu",
+//         "ParselNo": "1137",
+//         "Ada": "103"
+.addTo(map);
+});
+ 
+// Change the cursor to a pointer when
+// the mouse is over the states layer.
+map.on('mouseenter', 'states-layer', () => {
+map.getCanvas().style.cursor = 'pointer';
+});
+ 
+// Change the cursor back to a pointer
+// when it leaves the states layer.
+map.on('mouseleave', 'states-layer', () => {
+map.getCanvas().style.cursor = '';
+});
+});
+</script>
+ 
+</body>
+</html>
